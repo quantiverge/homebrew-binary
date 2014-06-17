@@ -15,7 +15,8 @@ class Pdftk < Formula
     :using => PkgExtract
   sha1 '93226ecef996d7ad833a773ee15f9b62365fb567'
 
-  depends_on :macos => :lion
+  depends_on :macos => :snow_leopard
+  depends_on :arch => :intel
 
   def install
     safe_system "pax --insecure -rz -f Payload.gz -s ',./bin,#{bin},' -s ',./man,#{man},' -s ',./lib,#{lib},' -s ',./license_gpl_pdftk,#{prefix}/LICENSE,' -s ',./,#{prefix}/README/,'"
